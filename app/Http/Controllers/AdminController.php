@@ -2,19 +2,31 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use App\Models\Post;
+use App\Models\Users;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
   public function index(){
-      return view('admin.index');
+
+    $posts=Post::all();
+    return view('admin/index')->with([
+     'posts'=>$posts,
+     ]);
+      
   }
   public function profile(){
     return view('admin.partials.profile');
 }
 public function table(){
-  return view('admin.partials.table');
+
+  $users=Users::all();
+  return view('admin.partials.table')->with([
+   'users'=>$users,
+   ]);
+
 }
 public function login(){
   return view('admin.partials.login');
@@ -54,7 +66,6 @@ return redirect()->route('admin.index')
 ->with('info', 'you are signed in!');
 
 }
-
 
 
 

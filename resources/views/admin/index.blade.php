@@ -30,22 +30,8 @@
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="badge badge-danger badge-counter">3+</span><i class="fas fa-bell fa-fw"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
                                         <h6 class="dropdown-header">alerts center</h6>
-                                        <a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a>
-                                        <a class="d-flex align-items-center dropdown-item" href="#">
-                                            <div class="mr-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a>
+                                       
+                                       
                                         <a class="d-flex align-items-center dropdown-item" href="#">
                                             <div class="mr-3">
                                                 <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
@@ -117,7 +103,7 @@
                     <h3 class="text-dark mb-0">Dashboard</h3>
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                      Creat POST
+                      Create POST
                     </button>
                 </div>
            
@@ -135,17 +121,91 @@
                 
                       <!-- Modal body -->
                       <div class="modal-body">
-                        Modal body..
+                        <form action="{{ route('post') }}" method="POST" enctype= "multipart/form-data" >
+                            @csrf
+                    
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>News heading</strong>
+                                        <input type="text" name="news_heading" class="form-control" placeholder="News Heading">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>News</strong>
+                                        <input type="text" name="news" class="form-control" placeholder="NEws">
+                                    </div>
+                                    
+                                </div>
+                              
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Read more:</strong>
+                                        <textarea class="form-control" style="height:150px" name="read_more"
+                                            ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>image</strong>
+                                        <input type="file" name="image">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Post</button>
+                                </div>
+                            </div>
+                    
+                        </form>
                       </div>
                 
-                      <!-- Modal footer -->
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                      </div>
+                      
                 
                     </div>
                   </div>
                 </div>
+
+
+
+
+                <table class="table table-bordered table-responsive-lg">
+                    <tr>
+                        <th>News HEADING</th>
+                        <th>News</th>
+                        <th>READ MORE</th>
+                        
+                    </tr>
+                    @foreach ($posts as $post)
+                        <tr>
+                       
+                            <td>{{ $post->news_heading }}</td>
+                            <td>{{ $post->news }}</</td>
+                            <td>{{ $post->read_more }}</td>
+                            
+                            <td>
+                    
+            
+                                    <a href="" title="show">
+                                        <i class="btn btn-danger">SHOW</i>
+                                    </a>
+                                   
+                                    <a href="">
+                                        <i class="btn btn-primary">EDIT</i>
+                                    </a>
+                                   
+                                    <a href="">
+                                        <i class="btn btn-info" onclick="return confirm('are you sure')">DELETE</i>
+                                    </a>
+            
+                
+                            </td>
+                           
+                        </tr>
+                 @endforeach
+                </table>
+            
                 
 </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
 

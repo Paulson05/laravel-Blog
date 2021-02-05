@@ -32,44 +32,36 @@
     <div class="col-lg-6">
       <div class="row">
         <!-- Column -->
+        @foreach($posts as $post)
         <div class="col-md-6">
           <div class="card border-0 mb-4">
             <a href="#"><img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img5.jpg" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">New Seminar on Newest Food Recipe</a></h6>
+            <div class="date-pos text-center text-white p-3 bg-success-gradiant">{{ $post->news_heading }}</div>
+            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">{{ $post->news }}</a></h6>
+            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">{{ $post->read_more }}</a></h6>
+            
           </div>
         </div>
-        <!-- Column -->
-        <div class="col-md-6">
-          <div class="card border-0 mb-4">
-            <a href="#"><img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img6.jpg" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">New Seminar on Newest Food Recipe</a></h6>
-          </div>
-        </div>
-        <!-- Column -->
-        <div class="col-md-6">
-          <div class="card border-0 mb-4">
-            <a href="#"><img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img7.jpg" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">New Seminar on Newest Food Recipe</a></h6>
-          </div>
-        </div>
-        <!-- Column -->
-        <div class="col-md-6">
-          <div class="card border-0 mb-4">
-            <a href="#"><img class="card-img-top" src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/blog/blog-home/img8.jpg" alt="wrappixel kit"></a>
-            <div class="date-pos text-center text-white p-3 bg-success-gradiant">JOHN DOE &nbsp; &nbsp; SEPT 15, 2017</div>
-            <h6 class="font-weight-medium mt-3"><a href="#" class="link text-decoration-none">New Seminar on Newest Food Recipe</a></h6>
-          </div>
-        </div>
-        <!-- Column -->
+     
+       
+      
+       
       </div>
     </div>
     <!-- Column -->
   </div>
 </div>
 </div>
+@endforeach
+
+
+<a href="#demo" data-toggle="collapse">Read more..</a>
+
+<div id="demo" class="collapse">
+  <textarea name="" id="" cols="10" rows="10"></textarea>
+
+</div>
+
 
 
 
