@@ -69,7 +69,10 @@ return redirect()->route('admin.index')
 ->with('info', 'you are signed in!');
 
 }
-
+public function edit($id){
+ 
+$posts = Post::find($id)->first();
+}
 
 
 }

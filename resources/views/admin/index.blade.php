@@ -115,7 +115,7 @@
                 
                       <!-- Modal Header -->
                       <div class="modal-header">
-                        <h4 class="modal-title">Modal Heading</h4>
+                        <h4 class="modal-title">Creat Post</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                 
@@ -191,9 +191,11 @@
                                         <i class="btn btn-danger">SHOW</i>
                                     </a>
                                    
-                                    <a href="">
-                                        <i class="btn btn-primary">EDIT</i>
-                                    </a>
+                        
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">
+                                       edit    <a href="{{url('admin/edit/'. $post->id)}}"></a>
+                                          </button>
+                                  
                                    
                                     <a href="">
                                         <i class="btn btn-info" onclick="return confirm('are you sure')">DELETE</i>
@@ -206,7 +208,63 @@
                  @endforeach
                 </table>
             
-                
+                <div class="modal" id="edit">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Edit Post</h4>
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          <form action="" method="POST" enctype= "multipart/form-data" >
+                              @csrf
+                      
+                              <div class="row">
+                                  <div class="col-xs-12 col-sm-12 col-md-12">
+                                      <div class="form-group">
+                                          <strong>News heading</strong>
+                                          <input type="text" name="news_heading" class="form-control" placeholder="News Heading">
+                                      </div>
+                                      
+                                  </div>
+                                  <div class="col-xs-12 col-sm-12 col-md-12">
+                                      <div class="form-group">
+                                          <strong>News</strong>
+                                          <input type="text" name="news" class="form-control" placeholder="NEws">
+                                      </div>
+                                      
+                                  </div>
+                                
+                                  <div class="col-xs-12 col-sm-12 col-md-12">
+                                      <div class="form-group">
+                                          <strong>Read more:</strong>
+                                          <textarea class="form-control" style="height:150px" name="read_more"
+                                              ></textarea>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-12 col-md-12">
+                                      <div class="form-group">
+                                          <strong>image</strong>
+                                          <input type="file" name="image">
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                      <button type="submit" class="btn btn-primary">Post</button>
+                                  </div>
+                              </div>
+                      
+                          </form>
+                        </div>
+                  
+                        
+                  
+                      </div>
+                    </div>
+                  </div>
 </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
 
 @endsection

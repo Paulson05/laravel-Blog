@@ -42,5 +42,6 @@ Route::get('/admin/dashboardsignup', [App\Http\Controllers\AdminController::clas
 Route::post('/admin/dashboardsignup', [App\Http\Controllers\AdminController::class, 'postAdminSigup'])->name('admin.dashboardsignup');
 Route::get('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class, 'getAdminSignin'])->name('admin.dashboardlogin');
 Route::post('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class, 'postAdminlogin'])->name('admin.dashboardlogin');
+Route::get('/admin/edit/{id}', [App\Http\Controllers\AdminController::class, 'edit'])->name('admin.edit');
 
 Route::post('/admin/post', [App\Http\Controllers\PostController::class, 'store'])->name('post');
