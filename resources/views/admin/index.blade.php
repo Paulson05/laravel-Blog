@@ -193,7 +193,7 @@
                                     <a href="{{ route('admin.edit', ['id'=>$post->id]) }}" >
                                         <i class="btn btn-danger fas fa-edit" ></i>
                                     </a>
-                                    <a href="{{ route('admin.edit', ['id'=>$post->id]) }}" >
+                                    <a href="{{ route('admin.delete', ['id'=>$post->id]) }}" >
                                         <i class="btn btn-danger fas fa-trash-alt" ></i>
                                     </a>
                                        

@@ -36,8 +36,23 @@ public function edit($id){
                          'image'     => "$request->image"
                      ]);
  
-     return redirect()->back()
+                     return redirect()->route('admin.index')
                       ->with('info', 'you are signed up!');
+  }
+
+
+  public function delete(Request $request, Post $post){
+    // $posts =Post::delete()
+    // ->where('id', $id);
+    //  return redirect()->route('admin.index');
+
+
+
+    
+    $postdelete = $post->find($request->id);
+    $postdelete->delete();
+        return redirect()->route('admin.index');
+
   }
 
 }

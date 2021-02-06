@@ -44,6 +44,7 @@ Route::get('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class
 Route::post('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class, 'postAdminlogin'])->name('admin.dashboardlogin');
 Route::get('admin/edit/{id}', [App\Http\Controllers\PostController::class, 'edit'])->name('admin.edit');
 Route::post('admin/update/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('admin.update');
+Route::get('admin/delete/{id}', [App\Http\Controllers\PostController::class, 'delete'])->name('admin.delete');
 
 
 
