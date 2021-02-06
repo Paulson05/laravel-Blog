@@ -15,7 +15,7 @@ class AdminController extends Controller
     return view('admin/index')->with([
      'posts'=>$posts,
      ]);
-      
+
   }
   public function profile(){
     return view('admin.partials.profile');
@@ -45,7 +45,7 @@ public function getAdminSignup(){
 }
 
 public function postAdminSigup(Request $request){
- 
+
   $array=collect($request->only(['email','username']))->put('password',bcrypt($request->password))->all();
   Admin::create($array);
    return redirect()->back()
@@ -58,21 +58,18 @@ public function getAdminSignin(){
 }
 
 public function postAdminlogin(Request $request){
-     
+
   if (!Auth::attempt($request->only(['email', 'password']), $request->has('remember'))){
-           
+
     return redirect()->back()->with('info', 'could not sign you in with those details');
-    
+
 }
 
 return redirect()->route('admin.index')
 ->with('info', 'you are signed in!');
 
 }
-public function edit($id){
- 
-$posts = Post::find($id)->first();
-}
+
 
 
 }
