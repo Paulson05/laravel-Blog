@@ -29,7 +29,10 @@ public function table(){
 
 }
 public function login(){
-  return view('admin.partials.login');
+  $admins=Admin::all();
+  return view('admin.partials.adminlogin')->with([
+    'admins'=>$admins,
+    ]);
 }
 public function register(){
   return view('admin.partials.register');

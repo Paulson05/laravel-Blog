@@ -137,25 +137,27 @@
                                         <th>Id</th>
                                         <th>Username</th>
                                         <th>Email</th>
-                                        <th>Password</th>
+                                        <th>created</th>
+                                        <th>updated</th>
                                       
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{--  @foreach($users as $user)  --}}
+                                    @foreach($admins as $admin)
                                         
                                    
                                     <tr>
                                        
-                                        {{--  <td>{{$user->id }}</td>
-                                        <td>{{$user->username }}</td>
-                                        <td>{{$user->email }}</td>
-                                        <td>{{$user->password }}</td>
-                                          --}}
+                                        <td>{{$admin->id }}</td>
+                                        <td>{{$admin->username }}</td>
+                                        <td>{{$admin->email }}</td>
+                                        <td>{{$admin->created_at }}</td>
+                                        <td>{{$admin->updated_at }}</td>
+                                        
                                        
                                     </tr>
                                     
-                                    {{--  @endforeach  --}}
+                                    @endforeach
                                 </tbody>
                                 
                             
