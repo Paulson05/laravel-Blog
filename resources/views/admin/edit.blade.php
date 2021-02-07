@@ -12,7 +12,7 @@
             @csrf
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-6 col-md-12">
                     <div class="form-group">
                         <strong>News heading</strong>
                         <input type="text" name="news_heading" class="form-control" value="{{ $post->news_heading}}">

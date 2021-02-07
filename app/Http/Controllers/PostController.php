@@ -41,7 +41,7 @@ public function edit($id){
   }
 
 
-  public function delete(Request $request, Post $post){
+  public function delete(Request $request, Post $id){
     // $posts =Post::delete()
     // ->where('id', $id);
     //  return redirect()->route('admin.index');
@@ -49,9 +49,16 @@ public function edit($id){
 
 
     
-    $postdelete = $post->find($request->id);
-    $postdelete->delete();
+   
+    $id->delete();
         return redirect()->route('admin.index');
+
+  }
+
+  public function show(Post  $id){
+    return view('admin.show')->with([
+      'post'=>$id,
+    ]);
 
   }
 

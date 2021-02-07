@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    $posts=Post::all();
-    return view('home.home')->with([
-        'posts'=>$posts,
-    ]);
-});
+// Route::get('/home', function () {
+//     $posts=Post::all();
+//     return view('home.home')->with([
+//         'posts'=>$posts,
+//     ]);
+// });
 
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'home'])->name('home.home');
 
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'userlogin'])->name('Auth.login');
 Route::post('/post', [App\Http\Controllers\AuthController::class, 'postLogin'])->name('Auth.postLogin');
@@ -42,9 +43,12 @@ Route::get('/admin/dashboardsignup', [App\Http\Controllers\AdminController::clas
 Route::post('/admin/dashboardsignup', [App\Http\Controllers\AdminController::class, 'postAdminSigup'])->name('admin.dashboardsignup');
 Route::get('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class, 'getAdminSignin'])->name('admin.dashboardlogin');
 Route::post('/admin/dashboardlogin', [App\Http\Controllers\AdminController::class, 'postAdminlogin'])->name('admin.dashboardlogin');
+
+
 Route::get('admin/edit/{id}', [App\Http\Controllers\PostController::class, 'edit'])->name('admin.edit');
 Route::post('admin/update/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('admin.update');
 Route::get('admin/delete/{id}', [App\Http\Controllers\PostController::class, 'delete'])->name('admin.delete');
+Route::get('admin/show/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('admin.show');
 
 
 

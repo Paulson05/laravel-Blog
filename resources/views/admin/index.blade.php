@@ -187,7 +187,7 @@
                             <td>
 
 
-                                    <a href="" title="show">
+                                    <a href="{{ route('admin.show', ['id'=>$post->id]) }}" title="show">
                                         <i class="btn btn-danger fas fa-eye"></i>
                                     </a>
                                     <a href="{{ route('admin.edit', ['id'=>$post->id]) }}" >
