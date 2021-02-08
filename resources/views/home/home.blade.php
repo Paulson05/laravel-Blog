@@ -7,7 +7,9 @@
 
   @foreach($posts as $post)
         
-  <div class="card-group col-md-6">
+
+     
+  <div class="card-group col-md-6"  >
     <div class="card">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
