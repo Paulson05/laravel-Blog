@@ -37,7 +37,7 @@ class AuthController extends Controller
         
     }
 
-    return redirect('/home')
+    return redirect()->route('admin.index')
     ->with('info', 'you are signed in!');
 
     }
