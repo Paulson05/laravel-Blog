@@ -21,7 +21,7 @@ class AuthController extends Controller
        return redirect()->back()
                         ->with('info', 'you are signed up!');
     }
-
+ 
     public function userSignup()
     {
       return view ('auth.signup');
